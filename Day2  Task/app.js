@@ -9,14 +9,19 @@
 //? Otherwise, the function should return the generated hash tag prefixed with #.
 
 //* Write a function generateHash to accomplish this task.
+let h2 = document.querySelector('h2')
+let ArrayWords;
 function generateHash(string) {
-    if (string.trim()===0) {
+    if (string.length>280 || string.trim().length===0) {
         return false
     }
-     string.split(' ')
-     return string.toUpperCase().concat()
-    
-}
+      ArrayWords =string.split(" ")
+     
+      ArrayWords = ArrayWords.map((CurrentW)=>CurrentW.replace(CurrentW[0],CurrentW[0].toUpperCase()));
 
-console.log(generateHash("#my name is thapa technical"));
+   return ArrayWords = `#${ArrayWords.join('')}`
+}
+let main =prompt('.')
+generateHash(`${main}`);
 // o/p = "#MyNameIs Thapa Technical"
+h2.innerHTML= ArrayWords
