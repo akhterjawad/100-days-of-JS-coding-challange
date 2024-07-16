@@ -12,16 +12,16 @@
 let h2 = document.querySelector('h2')
 let ArrayWords;
 function generateHash(string) {
-    if (string.length>280 || string.trim().length===0) {
+    if (string.length > 280 || string.trim().length === 0) {
         return false
     }
-      ArrayWords =string.split(" ")
-     
-      ArrayWords = ArrayWords.map((CurrentW)=>CurrentW.replace(CurrentW[0],CurrentW[0].toUpperCase()));
+    ArrayWords = string.split(" ")
 
-   return ArrayWords = `#${ArrayWords.join('')}`
+    ArrayWords = ArrayWords.map((CurrentW) => CurrentW.replace(CurrentW[0], CurrentW[0].toUpperCase()));
+
+    return ArrayWords = `#${ArrayWords.join('')}`
 }
-let main =prompt('.')
+let main = prompt('.')
 generateHash(`${main}`);
 // o/p = "#MyNameIs Thapa Technical"
-h2.innerHTML= ArrayWords
+h2.innerHTML = ArrayWords
