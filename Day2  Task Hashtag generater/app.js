@@ -17,7 +17,11 @@ function generateHash(string) {
     }
     ArrayWords = string.split(" ");
 
-    ArrayWords = ArrayWords.map(CurrentW => CurrentW.replace(CurrentW[0], CurrentW[0].toUpperCase()));
+    ArrayWords = ArrayWords.map(CurrentW => CurrentW
+        // [0].toUpperCase()+CurrentW.slice(1)
+        // .replace(CurrentW[0], CurrentW[0].toUpperCase())
+        .charAt(0).toUpperCase()+CurrentW.slice(1)
+    );
 
     return ArrayWords = `#${ArrayWords.join('')}`;
 }
