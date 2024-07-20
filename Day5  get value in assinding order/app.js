@@ -4,12 +4,9 @@
 //? Write a function to sort an array of numbers in an ascending order.
 let a;
 let sortAscending = (number) => {
-   return  number = number.map((main) => {
-        main = Math.max(main)
-    })
+    return number.sort((a, b) => a - b)
 }
-
-console.log(sortAscending([5, 3, 1, 8, 2])); // Output: [1, 3, 5, 8] 
+console.log(sortAscending([13, 10, 38, 8, 2])); // Output: [1, 3, 5, 8] 
 // console.log(sortAscending([5, 3, 10, 8])); // Output: [3, 5, 8,10]
 
 //todo Requirements:
