@@ -1,27 +1,26 @@
-//*------------------------------------------------
-//* Programming Question: Longest Word in a String
-//*------------------------------------------------
+//* Programming Question: Hash Tag Generator //*
 
+//? You are required to implement a function generateHash that generates a hash tag from a given input string. The hash tag should be constructed as follows:
 
-//? Q: Write a function findLongestWord that takes a string as input and returns the longest word in the string. If there are multiple longest words, return the first one encountered.
+//? The input string should be converted to a hash tag format, where each word is capitalized and concatenated together without spaces.
 
+//? If the length of the input string is greater than 280 characters or if the input string is empty or contains only whitespace, the function should return false.
 
-//* Constraints:
-//? The input string may contain alphabetic characters, digits, spaces, and punctuation.
-//? The input string is non-empty.
-//? The input string may contain multiple words separated by spaces.
+//? Otherwise, the function should return the generated hash tag prefixed with #.
 
+//* Write a function generateHash to accomplish this task.
+let h2 = document.querySelector('h2');
 
-//* Note:
-//? If the input string is empty or contains only whitespace, the function should return an false.
-//? The function should ignore leading and trailing whitespace when determining the longest word.
+function generateHash(string) {
+    if (string.length > 280 || string.trim().length === 0) {
+        return false
+    }
+    string = string.split(' ')
+    return `#${string.map(main=> main[0].toUpperCase()+main.slice(1)
+  ).join('')}`
+    }
 
+  
 
-const findLongestWord = (string) => {
-  if (string.trim().length === 0) {
-    return false
-  }
-  return string.split(' ').sort((a, b) => b.length - a.length)[0]
-}
-
-console.log(findLongestWord("Watch Thapa Technical javascript course on youtube"));
+console.log(generateHash(`Enter as you want to make a hashtag`)); 
+// o/p = "#MyNameIsThapaTechnical"
