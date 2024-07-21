@@ -1,27 +1,26 @@
-//* Programming Question: Hash Tag Generator //*
+// Write a function to determine whether a given string is a palindrome or not. A palindrome is a word, phrase, number, or other sequence of characters that reads the same forward and backward, ignoring spaces, punctuation, and capitalization.
+let r_string;
+let isPalindrome=(string)=>{
+string=string.toLowerCase().replace(/\W/g, "")
+  r_string= string.split('').reverse().join('');
+return r_string ===string?true:false
+} 
 
-//? You are required to implement a function generateHash that generates a hash tag from a given input string. The hash tag should be constructed as follows:
+console.log(isPalindrome("A man, a plan, a canal, Panama")); // Output: true
+console.log(isPalindrome("Racecar")); // Output: true 
+console.log(isPalindrome("hello")); // Output: false
 
-//? The input string should be converted to a hash tag format, where each word is capitalized and concatenated together without spaces.
+//---------------------------------------------------
+// ====================Constraints===================
+//---------------------------------------------------
 
-//? If the length of the input string is greater than 280 characters or if the input string is empty or contains only whitespace, the function should return false.
+// The input string may contain letters, digits, spaces, punctuation, and special characters.
+// The function should be case-insensitive, meaning "Racecar" and "racefar" should be considered the same. // Ignore spaces, punctuation, and special characters when determining if a string is a palindrome.
+// The function should return true if the input string is a palindrome and false otherwise.
 
-//? Otherwise, the function should return the generated hash tag prefixed with #.
-
-//* Write a function generateHash to accomplish this task.
-let h1 = document.querySelector('h1')
-let array;
-let generateHash = (string) => {
-    if (string.length >= 280 || string.trim().length === 0) {
-        return false
-    }
-    array = string.split(' ')
-     array = array.map(currentw => currentw
-        [0].toUpperCase()+currentw.slice(1)
-        //.replace(currentw[0], currentw[0].toUpperCase())
-    // .charAt(0).toUpperCase()+currentw.slice(1)
-    )
-    return array = array.join('')
-}
-console.log(generateHash(`my name is thapa technical`));
-// o/p = "#MyNameIsThapaTechnical"
+// Note
+// .replace(/\W/g, ""): Uses the replace() method with a regular expression (/\W/g) to remove all non-word characters from the string. Here:
+// \W matches any Hon-word character (equivalent to [^a-zA-Z0-9_]).
+// The g flag performs a global search, meaning it replaces all occurrences of non-word characters in the string.
+// So, replace(/\W/g, "") replaces all non-word characters with an empty string, effectively removing them from the string.
+//<!-------------------------------------- Complete -------------------------------------->//
