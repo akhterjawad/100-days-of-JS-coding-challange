@@ -1,26 +1,27 @@
-// Write a function to determine whether a given string is a palindrome or not. A palindrome is a word, phrase, number, or other sequence of characters that reads the same forward and backward, ignoring spaces, punctuation, and capitalization.
-let r_string;
-let isPalindrome=(string)=>{
-string=string.toLowerCase().replace(/\W/g, "")
-  r_string= string.split('').reverse().join('');
-return r_string ===string?true:false
-} 
+//*------------------------------------------------
+//* Programming Question: Longest Word in a String
+//*------------------------------------------------
 
-console.log(isPalindrome("A man, a plan, a canal, Panama")); // Output: true
-console.log(isPalindrome("Racecar")); // Output: true 
-console.log(isPalindrome("hello")); // Output: false
 
-//---------------------------------------------------
-// ====================Constraints===================
-//---------------------------------------------------
+//? Q: Write a function findLongestWord that takes a string as input and returns the longest word in the string. If there are multiple longest words, return the first one encountered.
 
-// The input string may contain letters, digits, spaces, punctuation, and special characters.
-// The function should be case-insensitive, meaning "Racecar" and "racefar" should be considered the same. // Ignore spaces, punctuation, and special characters when determining if a string is a palindrome.
-// The function should return true if the input string is a palindrome and false otherwise.
 
-// Note
-// .replace(/\W/g, ""): Uses the replace() method with a regular expression (/\W/g) to remove all non-word characters from the string. Here:
-// \W matches any Hon-word character (equivalent to [^a-zA-Z0-9_]).
-// The g flag performs a global search, meaning it replaces all occurrences of non-word characters in the string.
-// So, replace(/\W/g, "") replaces all non-word characters with an empty string, effectively removing them from the string.
-//<!-------------------------------------- Complete -------------------------------------->//
+//* Constraints:
+//? The input string may contain alphabetic characters, digits, spaces, and punctuation.
+//? The input string is non-empty.
+//? The input string may contain multiple words separated by spaces.
+
+
+//* Note:
+//? If the input string is empty or contains only whitespace, the function should return an false.
+//? The function should ignore leading and trailing whitespace when determining the longest word.
+
+
+const findLongestWord = (string) => {
+  if (string.trim().length === 0) {
+    return false
+  }
+  return string.split(' ').sort((a, b) => b.length - a.length)[0]
+}
+
+console.log(findLongestWord("Watch Thapa Technical javascript course on youtube"));
