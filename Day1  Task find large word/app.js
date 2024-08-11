@@ -17,18 +17,30 @@
 //? The function should ignore leading and trailing whitespace when determining the longest word.
 
 
-const findLongestWord = (str) => {
-    if (str.trim().length === 0) {
-        return false;
-    }
-    array = str.split(" ");
-    //first method
-    // array = array.sort((a, b) => b.length - a.length);
-    // console.log(array);
-    // // return array.at(-1);
-    // return array[0];
+// const findLongestWord = (str) => {
+//     if (str.trim().length === 0) {
+//         return false;
+//     }
+//     array = str.split(" ");
+//     //first method
+//     array = array.sort((a, b) => b.length - a.length);
+//     console.log(array);
+//     // return array.at(-1);
+//     return array[0];
 
-    //second method
-    return array.reduce((accum, curWord) => (curWord.length > accum.length ? curWord : accum), "")
+//     //second method
+//     return array.reduce((accum, curWord) => (curWord.length > accum.length ? curWord : accum), "")
+// }
+
+function findLongestWord(str) {
+    if (str.trim().length === 0) {
+        return false
+    }
+    array = str.split(' ')
+    array.sort((a, b) => b.length - a.length)
+    return array[0]
 }
+
+
+
 console.log(findLongestWord("Watch Thapa Technical javascript course on youtube"));
